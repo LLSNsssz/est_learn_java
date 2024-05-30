@@ -1,15 +1,12 @@
-public class Test implements TestInterFace {
+public class Test {
 
   public static void main(String[] args) {
-    boolean isTrue = false;
+    Galaxy galaxy = new Galaxy();
+    galaxy.call();
+    galaxy.name();
 
-    if (isTrue) {
-      System.out.println("이건 트루입니다.");
-    } else {
-      System.out.println("이건 펄스입니다.");
-    }
+    Iphone iphone = new Iphone();
+    iphone.call();
+    iphone.name();
   }
-
-  @Override
-  public void test() {}
 }
