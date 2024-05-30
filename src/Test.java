@@ -1,11 +1,15 @@
-public class Test {
+public class Test implements TestInterFace {
 
   public static void main(String[] args) {
-    float myFloat = 9.75f;
+    boolean isTrue = false;
 
-    float anotherFloat = myFloat * 2;
-
-    System.out.println("myFloat = " + (int) myFloat);
-    System.out.println("anotherFloat = " + (byte) anotherFloat);
+    if (isTrue) {
+      System.out.println("이건 트루입니다.");
+    } else {
+      System.out.println("이건 펄스입니다.");
+    }
   }
+
+  @Override
+  public void test() {}
 }
