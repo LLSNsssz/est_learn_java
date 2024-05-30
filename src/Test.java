@@ -1,10 +1,12 @@
-import java.util.Arrays;
-import java.util.List;
-
 public class Test {
 
   public static void main(String[] args) {
-    List<Integer> list = Arrays.asList(1);
-    System.out.println(list.get(0));
+    int a = 10;
+    int[] arr = new int[a];
+    String[] strArr = {"a", "b", "c"};
+    String name = "seunghee";
+    String name2 = new String("seunghee2");
+    System.out.println(name);
+    System.out.println(name2);
   }
 }
