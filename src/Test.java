@@ -2,14 +2,9 @@
 public class Test {
 
     public static void main(String[] args) {
-        int i = 10;
-        System.out.println(i);
-        System.out.println(i);
-        System.out.println(i);
-        System.out.println(i);
-        System.out.println(i);
-        System.out.println(i);
-        System.out.println(i);
-        System.out.println(i);
+        int a = 30;
+        int b = 40;
+        int c = 30;
+        System.out.println(a + b + c);
     }
 }
