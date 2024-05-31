@@ -1,11 +1,11 @@
+import java.util.Arrays;
+
 public class Test {
 
   public static void main(String[] args) {
 
-    int[] arr = new int[100];
-    System.out.println(arr[0]);
-
-    String[] arr2 = new String[1000];
-    System.out.println(arr2[0]);
+    int[] arr = {1, 3, 5, 7, 9};
+    Arrays.sort(arr);
+    System.out.println(arr[arr.length - 1]);
   }
 }
