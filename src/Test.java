@@ -1,8 +1,8 @@
 public class Test {
 
   public static void main(String[] args) {
-    String a = "a:b:c:d";
-
-    String[] split = a.split(":");
+    String a = "HELLO WORLD";
+    String concat = a.concat("!");
+    System.out.println(concat);
   }
 }
