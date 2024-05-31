@@ -1,9 +1,10 @@
 public class Test {
 
   public static void main(String[] args) {
-    String findChar = "What is your hobby";
-    for (int i = 13; i < findChar.length(); i++) {
-      System.out.print(findChar.charAt(i) + "");
-    }
+    String a =
+        "Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! Hello World! ";
+    System.out.println(a.replaceAll("World", "Java"));
+
+    System.out.println(a.replace("World", ""));
   }
 }
