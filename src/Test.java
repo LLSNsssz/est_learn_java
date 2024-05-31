@@ -1,10 +1,9 @@
 public class Test {
 
   public static void main(String[] args) {
-    String firstName = "seung hee";
-    String secondName = new String("seung hee");
-
-    System.out.println(firstName == secondName);
-    System.out.println(firstName.equals(secondName));
+    String findChar = "What is your hobby";
+    for (int i = 13; i < findChar.length(); i++) {
+      System.out.print(findChar.charAt(i) + "");
+    }
   }
 }
