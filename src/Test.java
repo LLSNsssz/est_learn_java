@@ -1,12 +1,24 @@
 public class Test {
 
   public static void main(String[] args) {
-    String name1 = "Tim";
-    int age1 = 30;
-    String name2 = "Anna";
-    int age2 = 45;
+    String result = "";
 
-    System.out.println(String.format("%s의 나이는 %s세 입니다", name1, age1));
-    System.out.println(String.format("%s의 나이는 %s세 입니다", name2, age2));
+    result += "Hello ";
+    result += "java ";
+    result += "World";
+
+    System.out.println(result);
+
+    StringBuilder sb = new StringBuilder();
+    sb.append("Hello ");
+    sb.append("java ");
+    sb.append("World");
+    System.out.println(sb); // sout이 toString()을 알아서 호출한다.
+
+    StringBuffer sf = new StringBuffer();
+    sf.append("Hello ");
+    sf.append("java ");
+    sf.append("World");
+    System.out.println(sf);
   }
 }
