@@ -4,20 +4,21 @@ public class Test {
 
   public static void main(String[] args) {
 
-    int x = 5;
-    int y = 5;
+    boolean isRaining = true;
 
-    System.out.println("전위 증가 연산자: " + (++x));
-    System.out.println("후위 증가 연산자: " + (y++));
+    if (isRaining) {
+      System.out.println("하늘에서 비가와요");
+    }
+    if (!isRaining) {
+      System.out.println("비가 안와요");
+    }
 
-    int a = 100;
-    int b = 100;
+    boolean isSunny = false;
 
-    System.out.println("전위 감소 연산자: " + (--a));
-    System.out.println("후위 감소 연산자: " + (b--));
-    System.out.println("전위 감소 연산자: " + (--a));
-    System.out.println("후위 감소 연산자: " + (b--));
-    System.out.println("전위 감소 연산자: " + (--a));
-    System.out.println("후위 감소 연산자: " + (b--));
+    if (isSunny) {
+      System.out.println("날씨가 맑아요");
+    } else {
+      System.out.println("날씨가 흐려요");
+    }
   }
 }
