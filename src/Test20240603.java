@@ -1,24 +1,8 @@
 public class Test20240603 {
   public static void main(String[] args) {
-
-    System.out.println(true && true);
-    System.out.println(true && false);
-    System.out.println(false && true);
-    System.out.println(false && false);
-
-    System.out.println(true || true);
-    System.out.println(true || false);
-    System.out.println(false || true);
-    System.out.println(false || false);
-
-    System.out.println(true ^ true);
-    System.out.println(true ^ false);
-    System.out.println(false ^ true);
-    System.out.println(false ^ false);
-
-    System.out.println(true ^ !true);
-    System.out.println(true ^ !false);
-    System.out.println(false ^ !true);
-    System.out.println(false ^ !false);
+    int x = 3195;
+    System.out.println(Integer.toBinaryString(x));
+    System.out.println(Integer.toOctalString(x));
+    System.out.println(Integer.toHexString(x));
   }
 }
