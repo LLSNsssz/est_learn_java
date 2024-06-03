@@ -1,13 +1,19 @@
 public class Test20240603 {
   public static void main(String[] args) {
 
-    System.out.println("Hello" + 123 + 456);
-    System.out.println(123 + 456 + "Hello");
+    int number1 = 10;
+    int number2 = 30;
 
-    StringBuilder sb = new StringBuilder();
-    sb.append(123);
-    sb.append(456);
-    sb.append("Hello");
-    System.out.println(sb);
+    System.out.println(number1 > number2);
+    System.out.println(number1 >= number2);
+    System.out.println(number1 <= number2);
+    System.out.println(number1 < number2);
+
+    System.out.println(number2 == number1);
+    System.out.println(number2 != number1);
+
+    String str1 = new String();
+    String str2 = new String();
+    System.out.println(str1.equals(str2));
   }
 }
