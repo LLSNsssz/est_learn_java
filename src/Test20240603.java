@@ -1,32 +1,87 @@
 public class Test20240603 {
   public static void main(String[] args) {
 
-    String day = "월요일";
+    char grade = 'A';
+    switch (grade) {
+      case 'A':
+        System.out.println("Excellent");
+        break;
+      case 'B':
+        System.out.println("Good");
+        break;
+      case 'C':
+        System.out.println("Average");
+        break;
+      case 'D':
+        System.out.println("Below Average");
+        break;
+      case 'F':
+        System.out.println("Fail");
+        break;
+    }
 
-    switch (day) {
-      case "월요일":
-        System.out.println("오르미");
+    int num1 = 10, num2 = 20;
+    char operator = '/';
+    switch (operator) {
+      case '+':
+        System.out.println(num1 + num2);
         break;
-      case "화요일":
-        System.out.println("오르미");
+      case '-':
+        System.out.println(num1 - num2);
         break;
-      case "수요일":
-        System.out.println("오르미");
+      case '*':
+        System.out.println(num1 * num2);
         break;
-      case "목요일":
-        System.out.println("오르미");
+      case '/':
+        System.out.println(num1 / num2);
         break;
-      case "금요일":
-        System.out.println("오르미");
+    }
+
+    String color = "red";
+    switch (color) {
+      case "red":
+        System.out.println("Apple");
         break;
-      case "토요일":
-        System.out.println("개인공부");
+      case "green":
+        System.out.println("Grass");
         break;
-      case "일요일":
-        System.out.println("개인공부");
+      case "blue":
+        System.out.println("Sky");
+        break;
+    }
+
+    int score = 99;
+    switch (score / 10) {
+      case 10, 9:
+        System.out.println("A");
+        break;
+      case 8:
+        System.out.println("B");
+        break;
+      case 7:
+        System.out.println("C");
+        break;
+      case 6:
+        System.out.println("D");
         break;
       default:
-        System.out.println("알 수 없는 요일");
+        System.out.println("F");
+        break;
+    }
+
+    String language = "Java";
+    switch (language) {
+      case "Java":
+        System.out.println("Java");
+        break;
+      case "Python":
+        System.out.println("Python");
+        break;
+      case "C++":
+        System.out.println("C++");
+        break;
+      default:
+        System.out.println("JavaScript");
         break;
     }
   }
