@@ -1,10 +1,11 @@
 public class Test20240603 {
   public static void main(String[] args) {
-    int a = 10;
-    int b = 5;
+    int three = 3;
+    int five = 5;
+    int two = 2;
 
-    boolean result1 = (a > 5) && (b < 10);
-    boolean result2 = (a > 5) || (b > 10);
-    boolean result3 = !(a > 5);
+    boolean result = (five > three) || (five < two) && (five < three);
+
+    System.out.println(result);
   }
 }
