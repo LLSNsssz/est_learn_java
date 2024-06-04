@@ -1,10 +1,11 @@
+import java.util.stream.IntStream;
+
 public class Test20240614 {
   public static void main(String[] args) {
-    int n = 100;
-    int sum = 0;
-    while (n > 0) {
-      sum += n--;
+    int i = 0;
+    while (i < 300) {
+      i += 3;
+      System.out.println(i);
     }
-    System.out.println("sum = " + sum);
   }
 }
