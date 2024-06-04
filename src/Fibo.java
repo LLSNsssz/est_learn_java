@@ -25,7 +25,7 @@ public class Fibo {
     System.out.println();
 
     System.out.println("어레이메서드 피보나치");
-    Arrays.parallelSetAll(fibArr, i -> (i < 2) ? i : fibArr[i - 1] + fibArr[i - 2]);
+    Arrays.parallelSetAll(fibArr, i -> (i < 2) ? 1 : fibArr[i - 1] + fibArr[i - 2]);
     System.out.println(Arrays.toString(fibArr));
   }
 }
