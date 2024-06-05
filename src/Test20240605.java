@@ -1,30 +1,24 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 public class Test20240605 {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
 
-    System.out.println("계절을 맞춰보세요!");
-    System.out.print("숫자를 입력하세요(1 ~ 4): ");
-    int a = scanner.nextInt();
-    scanner.nextLine();
-    switch (a) {
-      case 1:
-        System.out.println("봄 입니다");
-        break;
-      case 2:
-        System.out.println("여름 입니다");
-        break;
-      case 3:
-        System.out.println("가을 입니다");
-        break;
-      case 4:
-        System.out.println("겨울 입니다");
-        break;
-      default:
-        System.out.println("잘못된 입력입니다!");
+    Set<Integer> set = new HashSet<>();
+    Random random = new Random();
+
+    while (set.size() < 6) {
+      int num = random.nextInt(45) + 1;
+      set.add(num);
     }
 
-    scanner.close();
+    List<Integer> list = new ArrayList<>(set);
+    Collections.sort(list);
+
+    System.out.println(list);
   }
 }
