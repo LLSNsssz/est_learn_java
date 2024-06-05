@@ -5,13 +5,11 @@ import java.util.stream.Stream;
 public class Test20240614 {
   public static void main(String[] args) {
 
-    int[] scores = {1, 30, 20, 80, 15, 20, 30, 22};
-    int sum = 0;
-    for (int score : scores) {
-      sum += score;
+    String[] words = {"apple", "banana", "cherry", "durian"};
+    for (int i = 0; i < words.length; i++) {
+      for (int j = i + 1; j < words.length; j++) {
+        System.out.println(words[i] + " " + words[j]);
+      }
     }
-    double average = (double) sum / scores.length;
-    System.out.println("sum = " + sum);
-    System.out.println("average = " + average);
   }
 }
