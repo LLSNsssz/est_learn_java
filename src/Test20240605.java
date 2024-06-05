@@ -1,24 +1,23 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Random;
-import java.util.Set;
+import java.util.Scanner;
 
 public class Test20240605 {
   public static void main(String[] args) {
-
-    Set<Integer> set = new HashSet<>();
+    Scanner scanner = new Scanner(System.in);
     Random random = new Random();
-
-    while (set.size() < 6) {
-      int num = random.nextInt(45) + 1;
-      set.add(num);
+    int targetNumber = random.nextInt(100) + 1;
+    while (true) {
+      System.out.print("(1 ~ 100): ");
+      int num = scanner.nextInt();
+      if (num == targetNumber) {
+        System.out.println("정답!");
+        break;
+      } else if (num > targetNumber) {
+        System.out.println("다운!");
+      } else {
+        System.out.println("업!");
+      }
     }
-
-    List<Integer> list = new ArrayList<>(set);
-    Collections.sort(list);
-
-    System.out.println(list);
+    scanner.close();
   }
 }
