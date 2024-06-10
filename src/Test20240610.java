@@ -1,40 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+
 public class Test20240610 {
 
   public static void main(String[] args) {
-    /*
-    정수 n이 주어졌을 때, 숫자를 문자열 형태로 변환하고 뒤에 "!"를 붙여 반환하세요.
-        예를 들어, 정수가 13인 경우 이 메서드는 "13!"을 반환해야 합니다.
-        하지만, 숫자가 3으로 나누어 떨어지면 숫자 대신 "새콤!"를 반환하고,
-    5로 나누어 떨어지면 "달콤!"를 반환하며, 3과 5 모두로 나누어 떨어지면
-    "새콤달콤!"를 반환해야 합니다.
-    */
+    //    3개의 정수 인자 a, b, c가 주어졌을 때, 이들의 합을 반환하세요.
+    //    하지만, 인자 중 하나가 다른 인자와 동일하면, 그 숫자는 합산에서 제외합니다.
+    //    기본적으로 중복되지 않는 숫자만 합산합니다.
 
-    System.out.println(secomDalcom(1));
-    System.out.println(secomDalcom(2));
-    System.out.println(secomDalcom(3));
-    System.out.println(secomDalcom(4));
-    System.out.println(secomDalcom(5));
-    System.out.println(secomDalcom(15));
+    System.out.println(sumUnique(1, 2, 3)); // 6
+    System.out.println(sumUnique(3, 2, 3)); // 2
+    System.out.println(sumUnique(3, 3, 3)); // 0
   }
 
-  public static String secomDalcom(int num) {
-    /*    if (num % 15 == 0) return "새콤달콤!";
-
-    if (num % 3 == 0) return "새콤!";
-
-    if (num % 5 == 0) return "달콤!";
-
-    return num + "!";*/
-
-    boolean secom = num % 3 == 0;
-    boolean dalcom = num % 5 == 0;
-
-    if (secom && dalcom) return "새콤달콤!";
-
-    if (secom) return "새콤!";
-
-    if (dalcom) return "달콤!";
-
-    return num + "!";
+  public static int sumUnique(int a, int b, int c) {
+    //    HashSet<Integer> set = new HashSet<>(Arrays.asList(a, b, c));
+    //    ArrayList<Integer> list = new ArrayList<>(set);
+    //    Collections.sort(list);
+    //    if (set.size() == 3) return a + b + c;
+    //    else if (set.size() == 2) return list.get(0);
+    //    else return 0;
+    if (a == b && b == c) return 0;
+    if (a == b) return c;
+    if (a == c) return b;
+    if (b == c) return a;
+    return a + b + c;
   }
 }
