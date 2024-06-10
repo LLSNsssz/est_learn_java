@@ -2,19 +2,19 @@ public class Test20240610 {
 
   public static void main(String[] args) {
     /*
-    세 개의 정수 first, second, third가 주어졌을 때,
-    second가 first보다 크고 third가 second보다 크면 true를 반환하는 코드를 작성하세요.
-    단, 마지막 opt 파라미터가 true인 경우에는 second가 first보다 크지 않아도 되지만,
-    여전히 third보다는 작아야 합니다.
+    어떤 숫자가 11의 배수이거나 11의 배수보다 1 큰 숫자라면, 그 숫자를 "cool"하다고 하겠습니다.
+    주어진 0 이상의 숫자가 cool하다면 true를 반환하세요.
+
+
     */
 
-    System.out.println(isOrdered(1, 2, 4, false)); // true
-    System.out.println(isOrdered(1, 2, 1, false)); // false
-    System.out.println(isOrdered(1, 1, 2, true)); // true
+    System.out.println(isCool(22)); // true (11의 배수)
+    System.out.println(isCool(12)); // true (11의 배수보다 1 큼)
+    System.out.println(isCool(24)); // false (11의 배수도 아니고, 11의 배수보다 1 크지도 않음)
   }
 
-  public static boolean isOrdered(int first, int second, int third, boolean opt) {
+  public static boolean isCool(int num) {
 
-    return first < second && second < third || opt && first < third && second < third;
+    return num % 11 == 0 || num % 11 == 1;
   }
 }
