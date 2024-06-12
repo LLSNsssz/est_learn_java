@@ -1,3 +1,5 @@
+package daily;
+
 public class Test20240611_2 {
   public static void main(String[] args) {
     Test20240611_1 test1 = new Test20240611_1();

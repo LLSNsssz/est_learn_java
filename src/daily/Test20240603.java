@@ -1,3 +1,5 @@
+package daily;
+
 public class Test20240603 {
   public static void main(String[] args) {
 

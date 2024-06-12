@@ -1,4 +1,5 @@
-import java.util.Random;
+package daily;
+
 import java.util.Scanner;
 
 public class Test20240605 {

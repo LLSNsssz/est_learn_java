@@ -1,3 +1,5 @@
+package daily;
+
 import house.HouseKim;
 
 public class Test20240612 {

@@ -1,3 +1,5 @@
+package daily;
+
 public class Test20240611_1 {
 
   public int add(int a, int b) {
