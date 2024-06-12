@@ -1,19 +1,10 @@
 public class Test20240611_1 {
 
-  public static void call() {
-    System.out.println("call");
+  public int add(int a, int b) {
+    return a + b;
   }
 
-  private int a = 1;
-  public String b = "hello";
-
-  public String good() {
-    add();
-
-    return "okay";
-  }
-
-  private void add() {
-    System.out.println("add");
+  public int minus(int a, int b) {
+    return a - b;
   }
 }
