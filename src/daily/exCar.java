@@ -1,43 +1,59 @@
 package daily;
 
 public class exCar {
-  private int speed;
-  private int gear;
+  private int speed = 100;
 
+  private int gear;
   private String wheel;
   private int cc;
   private String logo;
   private String engine;
 
+  public double getSpeed() {
+    return speed * 1.6;
+  }
+
   public void setSpeed(int speed) {
-    if (speed < 0) {
-      this.speed = 0;
-      return;
-    }
-    if (speed <= 30) {
-      this.gear = 1;
-    } else if (speed <= 70) {
-      this.gear = 2;
-    } else if (speed <= 120) {
-      this.gear = 3;
-    } else {
-      System.out.println("과속!");
-    }
+    this.speed = speed;
   }
 
-  public void getGear() {
-    if (gear == 1) {
-      System.out.println("기어 " + gear + "단");
-    }
-    if (gear == 2) {
-      System.out.println("기어 " + gear + "단");
-    }
-    if (gear == 3) {
-      System.out.println("기어 " + gear + "단");
-    }
+  public int getGear() {
+    return gear;
   }
 
-  public int getSpeed() {
-    return speed;
+  public void setGear(int gear) {
+    this.gear = gear;
+  }
+
+  public String getWheel() {
+    return wheel;
+  }
+
+  public void setWheel(String wheel) {
+    this.wheel = wheel;
+  }
+
+  public int getCc() {
+    return cc;
+  }
+
+  public void setCc(int cc) {
+    this.cc = cc;
+  }
+
+  public String getLogo() {
+    return logo;
+  }
+
+  public void setLogo(String logo) {
+    this.logo = logo;
+  }
+
+  public String getEngine() {
+    return engine;
+  }
+
+  public void setEngine(String engine) {
+    this.engine = engine;
   }
 }
