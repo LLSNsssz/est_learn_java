@@ -27,20 +27,31 @@ public class Product {
     return price;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  // 미사용 주석처리
+  //  public void setName(String name) {
+  //    this.name = name;
+  //  }
 
   public void setPrice(int price) {
     this.price = price;
   }
 
-  public void setStock(int stock) {
-    this.stock = stock;
-  }
+  // 미사용 주석처리
+  //  public void setStock(int stock) {
+  //    this.stock = stock;
+  //  }
 
+  /** 상품 상세 정보 출력 메서드 */
   public void displayDetails() {
     System.out.println(
-        "Product{" + "제품명='" + getName() + '\'' + ", 가격=" + getPrice() + ", 재고=" + getStock());
+        "Product{"
+            + "제품명='"
+            + getName()
+            + '\''
+            + ", 가격="
+            + getPrice()
+            + ", 재고="
+            + getStock()
+            + '}');
   }
 }

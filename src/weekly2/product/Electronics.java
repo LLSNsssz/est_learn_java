@@ -12,7 +12,7 @@ public class Electronics extends Product {
 
   @Override
   public int calculatePrice() {
-    return brand.equals("Apple") ? (int) (getPrice() * 1.2) : getPrice();
+    return brand.equalsIgnoreCase("Apple") ? (int) (getPrice() * 1.2) : getPrice();
   }
 
   @Override
