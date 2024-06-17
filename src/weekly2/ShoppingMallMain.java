@@ -71,6 +71,8 @@ public class ShoppingMallMain {
       } catch (InputProductException e) {
         scanner.nextLine(); // 잘못된 입력 제거
         System.out.println(e.getMessage()); // shoppingMall 클래스에서 발생한 예외 처리
+      } finally {
+        scanner.close();
       }
     }
   }
