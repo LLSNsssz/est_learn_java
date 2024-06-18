@@ -38,11 +38,23 @@ public class ShoppingMallMain {
               continue;
             }
 
-            System.out.print("상품명을 입력하세요: ");
-            String productName = scanner.nextLine();
+            System.out.print("상품명 혹은 종류를 입력하세요: ");
+            String removeProductName = scanner.nextLine().toLowerCase();
+            String productTypeList = "Cloth, Electronics, Food";
+            if (productTypeList.toLowerCase().contains(removeProductName)) {
+              for (Product product : products) {
+                // products 배열을 순회하면서 각 객체의 클래스 이름에 입력 받은 removeProductName 문자열이 포함되는지 확인
+                if (product.getClass().getSimpleName().toLowerCase().contains(removeProductName)) {
+                  Product removeProduct = shoppingMall.getEqualClassProduct(removeProductName);
+                  shoppingMall.removeProduct(removeProduct);
+                }
+              }
+            } else {
+              shoppingMall.removeProduct(removeProductName);
+            }
 
             // 입력받은 상품명과 일치하는 상품을 shoppingMall 의 product 배열에서 제거
-            shoppingMall.removeProduct(productName);
+
             shoppingMall.displayProduct();
             break;
 
@@ -71,8 +83,6 @@ public class ShoppingMallMain {
       } catch (InputProductException e) {
         scanner.nextLine(); // 잘못된 입력 제거
         System.out.println(e.getMessage()); // shoppingMall 클래스에서 발생한 예외 처리
-      } finally {
-        scanner.close();
       }
     }
   }

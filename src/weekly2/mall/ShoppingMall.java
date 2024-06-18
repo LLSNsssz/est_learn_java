@@ -21,6 +21,25 @@ public abstract class ShoppingMall {
     return products;
   }
 
+  /**
+   * 매개변수와 products 배열의 요소들의 클래스명이 같은 product 반환
+   *
+   * @param removeProductName
+   * @return 만약 일치하는게 없으면 null; 반환
+   */
+  public Product getEqualClassProduct(String removeProductName) {
+    for (Product product : products) {
+      if (product
+          .getClass()
+          .getSimpleName()
+          .toLowerCase()
+          .contains(removeProductName.toLowerCase())) {
+        return product;
+      }
+    }
+    return null; // 일치하는게 없으면 removeProduct()메서드에서 "해당 상품은 존재하지 않습니다."을 출력해주므로 null이 반환될 일은 없다
+  }
+
   public Product getBLANK() {
     return BLANK;
   }
@@ -121,28 +140,19 @@ public abstract class ShoppingMall {
   /**
    * 상품을 삭제하는 메서드 입니다.
    *
-   * @param productName 삭제할 상품의 이름
+   * @param removeProductName 삭제할 상품의 이름
    */
-  public void removeProduct(String productName) {
+  public void removeProduct(String removeProductName) {
     /*
       매개변수로 전달받은 name 이 등록된 product 인지 확인합니다.
       포함되어 있지 않다면 "해당 상품은 존재하지 않습니다" 출력
     */
+    int productIndex = getProductIndex(removeProductName);
 
-    boolean isProduct = false; // 상품이 존재하는지 확인
-    int productIndex = 0; // 지워야할 인덱스
-    for (int i = 0; i < products.length; i++) {
-      // 배열에 동등한 이름이 존재한다면 isProduct 에 true, productIndex 에 i를 할당하고 이 반복문을 종료한다
-      if (products[i].getName().equalsIgnoreCase(productName)) {
-        isProduct = true;
-        productIndex = i;
-        break;
-      }
-    }
-    if (!isProduct) {
+    if (productIndex == -1) {
       System.out.println("해당 상품은 존재하지 않습니다.");
     } else {
-      for (int i = productIndex; i < products.length; i++) {
+      for (int i = getProductIndex(removeProductName); i < products.length; i++) {
         if (i < products.length - 1) {
           // 현재 인덱스가 마지막 인덱스가 아닌경우
           // 다음 인덱스의 상품을 현재 인덱스로 이동
@@ -154,9 +164,55 @@ public abstract class ShoppingMall {
           count--;
         }
       }
-      System.out.println(productName + "이(가) 삭제되었습니다.");
+      System.out.println(removeProductName + "이(가) 삭제되었습니다.");
       // 배열의 마지막요소를 BLANK 로 설정하고 count 를 1 감소
     }
+  }
+
+  public void removeProduct(Product removeProductName) {
+    int productIndex = getProductIndex(removeProductName);
+
+    if (productIndex == -1) {
+      System.out.println("해당 상품은 존재하지 않습니다.");
+    } else {
+      for (int i = getProductIndex(removeProductName); i < products.length; i++) {
+        if (i < products.length - 1) {
+          // 현재 인덱스가 마지막 인덱스가 아닌경우
+          // 다음 인덱스의 상품을 현재 인덱스로 이동
+          products[i] = products[i + 1];
+        } else {
+          // 마지막 인덱스인 경우
+          // 마지막으로 등록된 product 의 인덱스에 BLANK 할당
+          products[count - 1] = BLANK;
+          count--;
+        }
+      }
+      System.out.println(removeProductName.getName() + "이(가) 삭제되었습니다.");
+      // 배열의 마지막요소를 BLANK 로 설정하고 count 를 1 감소
+    }
+  }
+
+  private int getProductIndex(String removeProductName) {
+    for (int i = 0; i < products.length; i++) {
+      // 배열에 동등한 이름이 존재한다면 isProduct 에 true, productIndex 에 i를 할당하고 이 반복문을 종료한다
+      if (products[i].getName().equalsIgnoreCase(removeProductName)) {
+        return i;
+      }
+    }
+    return -1; // 상품이 존재하지 않으면 -1 반환
+  }
+
+  private int getProductIndex(Product removeProductName) {
+    for (int i = 0; i < products.length; i++) {
+      // 배열에 동등한 이름이 존재한다면 isProduct 에 true, productIndex 에 i를 할당하고 이 반복문을 종료한다
+      if (products[i]
+          .getClass()
+          .getSimpleName()
+          .equals(removeProductName.getClass().getSimpleName())) {
+        return i;
+      }
+    }
+    return -1; // 상품이 존재하지 않으면 -1 반환
   }
 
   /** products 배열을 순회하면서 product 의 정보를 출력합니다 */
