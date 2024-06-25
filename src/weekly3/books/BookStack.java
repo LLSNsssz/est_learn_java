@@ -1,5 +1,6 @@
-package weekly3;
+package weekly3.books;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class BookStack<T> {
@@ -9,15 +10,22 @@ public class BookStack<T> {
     this.books = books;
   }
 
-  public void pushBook(Book<T> book) {}
+  public Stack<Book<T>> getBooks() {
+    return books;
+  }
+
+  public void pushBook(Book<T> book) {
+    this.books.push(book);
+  }
 
   public Book<T> popBook() {
+    System.out.println("꺼낼 책: " + books.peek());
     return books.pop();
   }
 
   public Book<T> peekBook() {
     if (books.isEmpty()) {
-      throw new EmptyStackException("북스택이 비어있습니다.");
+      throw new EmptyStackException();
     }
     return books.peek();
   }

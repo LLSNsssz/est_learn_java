@@ -1,4 +1,4 @@
-package weekly3;
+package weekly3.books;
 
 import java.util.List;
 
