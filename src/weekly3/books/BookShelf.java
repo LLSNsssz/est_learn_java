@@ -37,7 +37,7 @@ public class BookShelf<T> implements BookManager<T> {
     for (int i = 0; i < books.size(); i++) {
       String bookTitle = books.get(i).getTitle();
       if (!bookTitle.contains(title)) {
-        return List.of();
+        continue;
       } else {
         resultList.add(books.get(i));
       }
@@ -52,7 +52,7 @@ public class BookShelf<T> implements BookManager<T> {
     for (int i = 0; i < books.size(); i++) {
       String bookAuthor = books.get(i).getAuthor();
       if (!bookAuthor.equals(author)) {
-        return List.of();
+        continue;
       } else {
         resultList.add(books.get(i));
       }

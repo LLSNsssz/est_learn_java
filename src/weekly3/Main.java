@@ -21,27 +21,27 @@ public class Main {
           new Book<>(book.getTitle(), book.getAuthor(), Integer.parseInt(book.getIdentifier()));
       bookStack.pushBook(stackBook);
     }
-    System.out.println("bookShelf의 bookList : " + bookShelf.getBooks());
-    System.out.println("bookStack의 bookStack: " + bookStack.getBooks());
+    System.out.println("bookShelf의 bookList : \n" + bookShelf.getBooks());
+    System.out.println("bookStack의 bookStack: \n" + bookStack.getBooks());
 
     /** 책 제거 */
     System.out.println("책 제거");
     while (!sc.nextLine().equals("exit")) {
       if (sc.nextLine().equals("popBook")) {
         bookStack.popBook();
-        System.out.println("bookStack의 bookStack: " + bookStack.getBooks());
+        System.out.println("bookStack의 bookStack: \n" + bookStack.getBooks());
       }
       Book<String> book = addBook(sc);
       bookShelf.removeBook(book);
     }
-    System.out.println("bookShelf.getBooks: " + bookShelf.getBooks());
+    System.out.println("bookShelf.getBooks: \n" + bookShelf.getBooks());
 
     /** 도서를 꺼내고 꺼낸 정보 출력 */
     System.out.println("도서 정보 출력");
     while (!sc.nextLine().equals("exit")) {
       try {
         bookStack.peekBook();
-        System.out.println("bookShelf.getBooks: " + bookShelf.getBooks());
+        System.out.println("bookShelf.getBooks: \n" + bookShelf.getBooks());
 
       } catch (EmptyStackException e) {
         System.out.println("북스택이 비어있습니다");
