@@ -10,4 +10,7 @@ public class Galaxy implements Phone {
     System.out.println("이것은 갤럭시 입니다");
     System.out.println();
   }
+
+  @Override
+  public void serial() {}
 }
